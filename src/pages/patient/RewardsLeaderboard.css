@@ -1,0 +1,738 @@
+/* Rewards & Leaderboard System Styling */
+
+.rewards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Banner Card */
+.rewards-header-card {
+  background: linear-gradient(135deg, #1e293b 0%, #303e67 50%, #1b4d89 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30, 41, 59, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.rewards-header-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(29, 70, 124, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.rewards-header-text h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.rewards-header-text p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.rewards-user-badge-pill {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.user-pill-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1d467c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(29, 70, 124, 0.4);
+}
+
+.user-pill-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-pill-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.user-pill-title {
+  font-size: 0.8rem;
+  color: #fcd34d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Two Column Layout Grid */
+.rewards-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .rewards-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Cards Styling */
+.rewards-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rewards-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.rewards-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rewards-card-title-icon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Level Center Card Specifics */
+.level-center-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.level-badge-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.level-number-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00b4b6 0%, #009091 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 180, 182, 0.3);
+}
+
+.level-titles-wrap h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.level-titles-wrap span {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.exp-total-stat {
+  text-align: right;
+}
+
+.exp-total-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00b4b6;
+}
+
+.exp-total-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Progress Bar */
+.exp-progress-bar-track {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.exp-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #042a59 0%, #00b4b6 100%);
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.exp-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Level Tiers Quick List */
+.level-tiers-row {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.level-tier-item {
+  flex: 1;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.level-tier-item.active {
+  background: #ecfdf5;
+  border-color: #00b4b6;
+  color: #065f46;
+  font-weight: 700;
+}
+
+/* Streak Adherence Specifics */
+.streak-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  padding: 16px 20px;
+  border-radius: 14px;
+}
+
+.streak-flame-icon {
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+}
+
+.streak-info-text h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ea580c;
+  margin: 0 0 2px 0;
+}
+
+.streak-info-text p {
+  font-size: 0.85rem;
+  color: #c2410c;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Days Circle Row */
+.streak-days-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.streak-day-dot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.streak-day-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.streak-day-dot.active .streak-day-circle {
+  background: #f97316;
+  border-color: #ea580c;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+}
+
+.streak-day-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.streak-bonus-banner {
+  background: #f0fdf4;
+  border: 1px dashed #86efac;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: #166534;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Daily Checklist Items */
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist-card-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.checklist-card-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateX(3px);
+}
+
+.checklist-card-item.completed {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.checklist-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checklist-custom-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: transparent;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.checklist-card-item.completed .checklist-custom-checkbox {
+  background: #00b4b6;
+  border-color: #00b4b6;
+  color: #ffffff;
+}
+
+.checklist-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.checklist-card-item.completed .checklist-text {
+  color: #15803d;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+.checklist-exp-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #00b4b6;
+  background: #dcfce7;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Rewards Milestones List */
+.milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.milestone-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.milestone-item.unlocked {
+  border-color: #042a59;
+  background: #eff6ff;
+  box-shadow: 0 4px 12px rgba(4, 42, 89, 0.08);
+}
+
+.milestone-item.claimed {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  opacity: 0.85;
+}
+
+.milestone-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.milestone-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.milestone-item.unlocked .milestone-icon {
+  background: #042a59;
+  color: #ffffff;
+}
+
+.milestone-info h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 2px 0;
+}
+
+.milestone-info span {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.milestone-action-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.milestone-action-btn.btn-locked {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.milestone-action-btn.btn-redeem {
+  background: #042a59;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(4, 42, 89, 0.3);
+}
+
+.milestone-action-btn.btn-redeem:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.milestone-action-btn.btn-claimed {
+  background: #dcfce7;
+  color: #15803d;
+  cursor: default;
+}
+
+/* Leaderboard Section */
+.leaderboard-filters {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #1b4d89;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.leaderboard-row:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-row.is-current-user {
+  background: #ecfdf5;
+  border-color: #00b4b6;
+  box-shadow: 0 4px 14px rgba(0, 180, 182, 0.15);
+}
+
+.leaderboard-rank-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rank-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.rank-badge.rank-1 { background: #fef3c7; color: #d97706; border: 1px solid #fde047; }
+.rank-badge.rank-2 { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+.rank-badge.rank-3 { background: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
+.rank-badge.rank-other { background: #f8fafc; color: #94a3b8; }
+
+.leaderboard-user-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-small {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-name-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.user-role-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-left: 6px;
+}
+
+.tag-student { background: #e0e7ff; color: #4338ca; }
+.tag-faculty { background: #fae8ff; color: #86198f; }
+
+.user-status-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.status-stable { background: #dcfce7; color: #15803d; }
+.status-monitoring { background: #fef3c7; color: #b45309; }
+.status-excellent { background: #e0f2fe; color: #0369a1; }
+
+.leaderboard-points-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #00b4b6;
+}
+
+/* Modal Popup */
+.reward-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.reward-modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.modal-trophy-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #d97706;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.25);
+}
+
+.coupon-code-box {
+  background: #f8fafc;
+  border: 2px dashed #042a59;
+  padding: 14px;
+  border-radius: 12px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coupon-code-text {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  letter-spacing: 1px;
+}
+
+.copy-coupon-btn {
+  background: #042a59;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}

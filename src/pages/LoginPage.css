@@ -1,0 +1,318 @@
+.custom-login-page {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #021a3a;
+  padding: 40px 20px;
+  font-family: var(--font-primary);
+}
+
+.login-card-container {
+  background: #e2e8f0;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: #042a59;
+}
+
+/* Brand Header */
+.brand-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brand-logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.brand-logo-container h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #021a3a;
+  margin: 0;
+}
+
+.brand-slogan {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.welcome-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #021a3a;
+  margin-bottom: 4px;
+}
+
+.welcome-subtitle {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+/* Role Selector Grid */
+.role-selector-grid {
+  background: #042a59;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 12px;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.role-btn-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 8px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.role-btn-item:hover {
+  color: #ffffff;
+}
+
+.role-btn-item.active {
+  background: #00b4b6;
+  color: #ffffff;
+}
+
+.role-icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Google Sign In */
+.google-sign-in-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #042a59;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 24px;
+}
+
+.google-sign-in-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.google-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Divider styling */
+.login-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #cbd5e1;
+}
+
+.divider-text {
+  padding: 0 16px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Inputs form styling */
+.login-inputs-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.password-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00b4b6;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.login-input-wrapper {
+  position: relative;
+}
+
+.input-prefix-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: none;
+  background: #042a59;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.login-input-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.login-input-wrapper input:focus {
+  box-shadow: 0 0 0 2px #00b4b6;
+}
+
+.password-toggle-visibility {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Remember me checkbox */
+.remember-me-row {
+  margin-top: 4px;
+}
+
+.remember-me-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.checkbox-custom-label {
+  font-weight: 550;
+}
+
+.login-error-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.custom-submit-login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #042a59;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.custom-submit-login-btn:hover {
+  background: #021a3a;
+}
+
+.custom-login-footer {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.signup-highlight-link {
+  color: #00b4b6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signup-highlight-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-card-container {
+    padding: 24px 20px;
+  }
+  .role-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

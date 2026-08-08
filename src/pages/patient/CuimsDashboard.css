@@ -1,0 +1,600 @@
+/* CUIMS Portal Layout & Styling */
+:root {
+  --cuims-header-bg: #ffffff;
+  --cuims-sidebar-bg: #fdf2f8;
+  --cuims-sidebar-active: #fce7f3;
+  --cuims-sidebar-hover: #fbcfe8;
+  --cuims-sidebar-text: #831843;
+  --cuims-accent-blue: #f2427a;
+  --cuims-accent-green: #d65313;
+  --cuims-bg-gray: #f3f5f8;
+  --cuims-card-border: #e2e8f0;
+}
+
+body:has(.cuims-layout) .main-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.cuims-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--cuims-bg-gray);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  transform: none !important;
+  perspective: none !important;
+  filter: none !important;
+}
+
+/* CUIMS Top Header */
+.cuims-header {
+  height: 66px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 20px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+  transform: none !important;
+  perspective: none !important;
+  filter: none !important;
+}
+
+.cuims-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cuims-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.cuims-menu-toggle:hover {
+  background: #f1f5f9;
+}
+
+.cuims-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.cuims-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cuims-logo-cu {
+  background: #c8102e;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.3rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: -0.5px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cuims-logo-ims {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.cuims-logo-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+/* CUIMS Search Bar */
+.cuims-search-container {
+  flex: 1;
+  max-width: 520px;
+  margin: 0 24px;
+  position: relative;
+}
+
+.cuims-search-input {
+  width: 100%;
+  height: 40px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 0 44px 0 20px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.cuims-search-input:focus {
+  background: #ffffff;
+  border-color: #042a59;
+  box-shadow: 0 0 0 3px rgba(4, 42, 89, 0.15);
+}
+
+.cuims-search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* Header Right Icons & User Profile */
+.cuims-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cuims-icon-btn {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.cuims-icon-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.cuims-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 8px;
+  border-left: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.cuims-user-info {
+  text-align: right;
+  line-height: 1.2;
+}
+
+.cuims-user-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+.cuims-user-id {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.cuims-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+/* CUIMS Main Body with Sidebar */
+.cuims-body-wrapper {
+  display: flex !important;
+  flex: 1 !important;
+  margin-top: 66px !important;
+  height: calc(100vh - 66px) !important;
+  overflow: hidden !important;
+}
+
+/* CUIMS Sidebar */
+.cuims-sidebar {
+  width: 260px !important;
+  background: var(--cuims-sidebar-bg) !important;
+  color: var(--cuims-sidebar-text) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: width 0.3s ease !important;
+  flex-shrink: 0 !important;
+  position: fixed !important;
+  top: 66px !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  height: calc(100vh - 66px) !important;
+  z-index: 99 !important;
+  overflow-y: auto !important;
+  transform: none !important;
+  perspective: none !important;
+  filter: none !important;
+}
+
+.cuims-sidebar.collapsed {
+  width: 60px !important;
+}
+
+.cuims-sidebar-nav {
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+}
+
+.cuims-sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: var(--cuims-sidebar-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.cuims-sidebar-item:hover {
+  background: var(--cuims-sidebar-hover);
+  color: var(--cuims-sidebar-text);
+}
+
+.cuims-sidebar-item.active {
+  background: var(--cuims-sidebar-active);
+  color: var(--cuims-sidebar-text);
+  font-weight: 600;
+  border-left-color: var(--cuims-accent-blue);
+}
+
+.cuims-sidebar-chevron {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* CUIMS Main Content Container */
+.cuims-main-content {
+  flex: 1 !important;
+  padding: 20px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  max-width: 1400px !important;
+  margin-left: 260px !important;
+  width: calc(100% - 260px) !important;
+  height: calc(100vh - 66px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  transition: margin-left 0.3s ease, width 0.3s ease !important;
+}
+
+.cuims-sidebar.collapsed + .cuims-main-content {
+  margin-left: 60px !important;
+  width: calc(100% - 60px) !important;
+}
+
+/* Top 5 Quick Action Cards Row */
+.cuims-top-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .cuims-top-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cuims-top-cards-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cuims-quick-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cuims-quick-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cuims-quick-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.cuims-quick-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cuims-quick-card-btn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #042a59;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.cuims-quick-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Featured LMS Card */
+.cuims-quick-card.lms-card {
+  background: linear-gradient(135deg, #1b385c, #2a4c77);
+  color: #ffffff;
+  border: 2px solid #00c9a7;
+  box-shadow: 0 4px 15px rgba(0, 201, 167, 0.25);
+}
+
+.cuims-quick-card.lms-card .cuims-quick-card-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.cuims-quick-card.lms-card .cuims-quick-card-btn {
+  color: #ffffff;
+}
+
+.cuims-quick-card.lms-card .cuims-quick-card-icon {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Banner Row: Weather + Virtual ID Card */
+.cuims-banner-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .cuims-banner-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.cuims-weather-pill {
+  flex: 1;
+  background: #1b365d;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.cuims-weather-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #cbd5e1;
+}
+
+.cuims-weather-temp {
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cuims-id-card-banner {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.cuims-id-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.cuims-id-card-btn {
+  background: #e0f2fe;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cuims-id-card-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* 3 Column Grid Section */
+.cuims-three-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.1fr;
+  gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .cuims-three-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cuims-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cuims-card-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cuims-message-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* CUIMS Styled Table */
+.cuims-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.cuims-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cuims-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.cuims-table tr:hover {
+  background: #f8fafc;
+}
+
+/* Announcements Box */
+.cuims-announcement-filter {
+  display: flex;
+  gap: 10px;
+}
+
+.cuims-announcement-search {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.cuims-announcement-select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: #ffffff;
+}
+
+.cuims-announcement-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cuims-announcement-title {
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cuims-announcement-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e3a60;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  width: fit-content;
+}

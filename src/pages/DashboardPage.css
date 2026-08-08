@@ -1,0 +1,767 @@
+.dashboard-outer-container {
+  min-height: calc(100vh - 72px);
+  background: #021a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: var(--font-primary);
+}
+
+.dashboard-light-card {
+  background: #e2e8f0;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  color: #042a59;
+}
+
+/* Sidebar Styling */
+.dashboard-sidebar {
+  background: #042a59;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-header-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.brand-header-sidebar h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.user-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  background: #00b4b6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.user-profile-details h4 {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  word-break: break-all;
+}
+
+.badge-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(0, 180, 182, 0.2);
+  color: #00b4b6;
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.menu-btn.active {
+  background: #00b4b6;
+  color: #ffffff;
+}
+
+.menu-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.logout-sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  background: none;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.logout-sidebar-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+/* Content Area */
+.dashboard-content-area {
+  background: #f1f5f9;
+  padding: 40px;
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
+}
+
+.tab-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.portal-header-banner {
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 16px;
+}
+
+.portal-header-banner h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #021a3a;
+}
+
+.portal-header-banner p {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Cards & Widgets */
+.portal-card,
+.appointment-form-card,
+.appointment-history-card,
+.ambulance-request-card,
+.emergency-contacts-card,
+.pharmacy-block,
+.delivery-track-card,
+.coupon-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.portal-card h3,
+.appointment-form-card h3,
+.appointment-history-card h3,
+.ambulance-request-card h3,
+.emergency-contacts-card h3,
+.pharmacy-block h3,
+.delivery-tracker-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #021a3a;
+  margin-bottom: 16px;
+}
+
+.portal-meta-grid,
+.consultation-section-grid,
+.ambulance-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.bio-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bio-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.92rem;
+}
+
+.bio-row strong {
+  color: #64748b;
+}
+
+.wellness-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.metric-box {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-lbl {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.metric-val {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.preventive-support-note {
+  background: rgba(0, 180, 182, 0.08);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border-left: 4px solid #00b4b6;
+}
+
+.preventive-support-note h4 {
+  font-size: 0.95rem;
+  color: #021a3a;
+  margin-bottom: 4px;
+}
+
+.preventive-support-note p {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* Appointment Form internal layout */
+.form-row-internal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.appointments-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.appt-meta h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #021a3a;
+}
+
+.appt-meta span {
+  font-size: 0.78rem;
+  color: #64748b;
+  display: block;
+}
+
+.appt-meta p {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.appt-badge-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.badge-mode {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.badge-mode.online {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-mode.offline {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.badge-status.confirmed {
+  background: rgba(0, 180, 182, 0.1);
+  color: #00b4b6;
+}
+
+.badge-status.pending {
+  background: rgba(29, 70, 124, 0.1);
+  color: #d97706;
+}
+
+/* Ambulance Assistance */
+.ambulance-action-zones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.zone-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #042a59;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.zone-btn:hover {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: #fca5a5;
+  color: #ef4444;
+}
+
+.dispatch-alert-active {
+  background: #fff5f5;
+  border: 2px dashed #f87171;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.dispatch-alert-active h4 {
+  color: #ef4444;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.dispatch-alert-active p {
+  font-size: 0.85rem;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-item h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact-item p {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.contact-tel-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(0, 180, 182, 0.1);
+  color: #00b4b6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+}
+
+.contact-tel-btn:hover {
+  background: #00b4b6;
+  color: #ffffff;
+}
+
+/* Pharmacy and Price Comparison */
+.prescription-upload-box {
+  border: 2px dashed #cbd5e1;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-icon {
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.prescription-upload-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.prescription-upload-box p {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.pharmacy-cart-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 6px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  margin: 16px 0;
+}
+
+.search-bar-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-bar-wrapper input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.search-bar-wrapper input:focus {
+  border-color: #00b4b6;
+}
+
+.med-compare-card {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.med-compare-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.med-compare-header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.generic-lbl {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.med-stock-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.med-stock-badge.in-stock {
+  background: rgba(0, 180, 182, 0.1);
+  color: #00b4b6;
+}
+
+.med-stock-badge.prescription-required {
+  background: rgba(29, 70, 124, 0.1);
+  color: #d97706;
+}
+
+.chemist-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.chemist-price-option {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.chemist-price-option.best-deal {
+  border-color: #a7f3d0;
+  background: rgba(0, 180, 182, 0.05);
+}
+
+.chemist-name {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.chemist-price {
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: #021a3a;
+}
+
+.quick-suggestions-box h5 {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suggestion-tags span {
+  font-size: 0.78rem;
+  background: #cbd5e1;
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #042a59;
+  transition: all var(--transition-fast);
+}
+
+.suggestion-tags span:hover {
+  background: #00b4b6;
+  color: #ffffff;
+}
+
+/* Delivery status */
+.delivery-track-card {
+  margin-bottom: 12px;
+}
+
+.delivery-track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.del-med-list {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.badge-delivery-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.delivery-track-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Coupons Grid */
+.coupons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.coupon-card {
+  border: 2px dashed #00b4b6;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.coupon-card::before,
+.coupon-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.coupon-card::before { left: -7px; border-right: 2px dashed #00b4b6; }
+.coupon-card::after { right: -7px; border-left: 2px dashed #00b4b6; }
+
+.coupon-card.claimed {
+  border-color: #cbd5e1;
+  opacity: 0.8;
+}
+
+.coupon-card.claimed::before { border-right: 2px dashed #cbd5e1; }
+.coupon-card.claimed::after { border-left: 2px dashed #cbd5e1; }
+
+.coupon-badge {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(0, 180, 182, 0.1);
+  color: #00b4b6;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.coupon-code {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #021a3a;
+}
+
+.coupon-main p {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.claimed-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #00b4b6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 992px) {
+  .dashboard-light-card {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-sidebar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .portal-meta-grid,
+  .consultation-section-grid,
+  .ambulance-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
